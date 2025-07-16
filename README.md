@@ -1,5 +1,7 @@
 # Mental-Health-Assessment-with-Explainable-AI
 This repository contains the B.Tech. final year project titled "Emotion-Based Mental Health Assessment with Explainable AI (XAI)," developed at Netaji Subhas University of Technology (NSUT), New Delhi.
+
+
 🌟 Overview
 Mental health is a critical component of overall well-being, yet traditional assessment methods are often subjective, inaccessible, and reactive. This project introduces a proactive approach to mental health monitoring by developing a multimodal AI system that analyzes emotional states in real-time.
 
