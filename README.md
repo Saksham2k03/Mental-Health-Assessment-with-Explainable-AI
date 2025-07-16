@@ -1,165 +1,121 @@
-# Mental-Health-Assessment-with-Explainable-AI
-This repository contains the B.Tech. final year project titled "Emotion-Based Mental Health Assessment with Explainable AI (XAI)," developed at Netaji Subhas University of Technology (NSUT), New Delhi.
+# Emotion-Based Mental Health Assessment with Explainable AI (XAI)
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python Version](https://img.shields.io/badge/python-3.8%2B-brightgreen.svg)
+![Frameworks](https://img.shields.io/badge/frameworks-TensorFlow%20%7C%20Keras-orange.svg)
 
-🌟 Overview
-Mental health is a critical component of overall well-being, yet traditional assessment methods are often subjective, inaccessible, and reactive. This project introduces a proactive approach to mental health monitoring by developing a multimodal AI system that analyzes emotional states in real-time.
+[cite_start]A multimodal deep learning framework for real-time mental health assessment by analyzing facial expressions and vocal tones, with a core focus on transparency through Explainable AI (XAI)[cite: 228, 288]. [cite_start]This project was developed as a B.Tech. final year project at Netaji Subhas University of Technology (NSUT), New Delhi[cite: 241, 248].
 
+---
 
+## 🚀 The Problem
 
-Our system leverages deep learning to interpret emotional cues from both 
+[cite_start]Traditional mental health assessments often rely on subjective self-reports, which can be inconsistent, biased, and inaccessible due to stigma or cost[cite: 22, 284]. [cite_start]Furthermore, most AI-driven solutions act as "black boxes," providing predictions without transparent reasoning, which limits their trustworthiness in sensitive healthcare applications[cite: 24, 311].
 
-facial expressions and vocal tones. The cornerstone of this project is its commitment to transparency through 
+---
 
+## 💡 Our Solution
 
-Explainable AI (XAI). By integrating techniques like SHAP, LIME, and Grad-CAM, we make the AI's decision-making process understandable, fostering trust among users and clinicians.
+This project introduces a proactive and transparent approach to mental health monitoring. [cite_start]By fusing insights from multiple emotional channels and making the AI's logic interpretable, we aim to create a reliable tool for early emotional distress detection[cite: 17, 19].
 
+### Key Features
+* **🧠 Multimodal Emotion Recognition**: The system integrates two parallel deep learning models for a holistic emotional analysis:
+    * [cite_start]**Facial Emotion Recognition (FER)**: A VGGNet-based CNN classifies emotions from real-time facial expressions[cite: 36, 287].
+    * [cite_start]**Voice Emotion Recognition (VER)**: A hybrid CNN-LSTM architecture analyzes vocal features like tone and pitch to detect emotion in speech[cite: 80, 287].
+* [cite_start]**🔍 Explainable AI (XAI) for Transparency**: To build trust and enable validation, the model's decisions are made transparent[cite: 288].
+    * [cite_start]**Grad-CAM** generates visual heatmaps on faces, highlighting the key regions (e.g., eyes, mouth) that influence a prediction[cite: 205, 516].
+    * [cite_start]**SHAP and LIME** assign importance scores to vocal features, explaining *why* a certain emotion was detected from audio[cite: 205, 414].
+* [cite_start]**🏆 High Performance**: The integrated multimodal system achieves a robust overall accuracy of **91.42%** on test datasets[cite: 698].
 
+---
 
+## ⚙️ System Architecture
 
-The ultimate goal is to create a supportive tool that provides early warnings for emotional distress, encouraging individuals to take proactive steps toward emotional wellness.
+The system processes video and audio inputs through two distinct branches before fusing the results for a final classification.
 
+1.  [cite_start]**Facial Branch** → A face is detected from a video frame, preprocessed, and fed into the **VGGNet model**[cite: 34, 454].
+2.  [cite_start]**Vocal Branch** → Audio is preprocessed to extract **MFCCs**, which are then fed into the **CNN-LSTM model**[cite: 78, 464].
+3.  [cite_start]**Fusion** → Feature vectors from both branches are concatenated and passed to a final decision network for a unified and robust emotion prediction[cite: 493].
 
+---
 
-✨ Key Features
-Multimodal Analysis: The system fuses two critical channels for a more accurate and holistic emotional assessment:
+## 🛠️ Technology Stack
 
+* **Core Frameworks**: Python, TensorFlow, Keras
+* **Data Processing**: OpenCV, Librosa, Scikit-learn
+* **AI Models**: VGGNet, CNN-LSTM
+* **XAI Libraries**: SHAP, LIME, Grad-CAM
+* **Datasets Used**:
+    * [cite_start]FER2013 & CK+ (for facial expressions) [cite: 36, 438]
+    * [cite_start]RAVDESS (for voice emotions) [cite: 82, 439]
 
-Facial Emotion Recognition (FER): A VGGNet-based Convolutional Neural Network (CNN) analyzes real-time video to classify facial expressions into seven emotional states.
+---
 
+## 📊 Results & Explainability
 
+The model effectively distinguishes between seven core emotions. [cite_start]The confusion matrix below shows high per-class accuracy, such as 98.61% for 'Angry' and 97.51% for 'Happy'[cite: 42].
 
+#### Grad-CAM Visualization
+The following image demonstrates the XAI in action. [cite_start]The heatmaps show the exact facial regions the model focused on to make its prediction, making the decision process transparent[cite: 205].
 
+![Grad-CAM Heatmaps](https://i.imgur.com/nB4Xn8X.png)
+*Heatmaps for 'Disgust', 'Happy', 'Sad', 'Surprise', and 'Angry' emotions.*
 
-Voice Emotion Recognition (VER): A hybrid CNN-LSTM model processes audio features (MFCCs) to identify emotions from speech patterns, independent of the content.
+---
 
+## 📦 Setup and Installation
 
+To get a local copy up and running, follow these simple steps.
 
-Explainability and Transparency: We address the "black box" problem in AI by implementing leading XAI techniques:
+1.  **Clone the repo**
+    ```sh
+    git clone [https://github.com/your_username/your_repository.git](https://github.com/your_username/your_repository.git)
+    ```
+2.  **Navigate to the project directory**
+    ```sh
+    cd your_repository
+    ```
+3.  **Install Python packages**
+    ```sh
+    pip install -r requirements.txt
+    ```
 
+---
 
-Grad-CAM: Generates heatmaps on facial images to visually highlight the specific regions (e.g., eyes, mouth) that influence an emotion prediction.
+## ▶️ Usage
 
+1.  Download the required datasets and place them in the `data/` directory.
+2.  Run the training script to train the models:
+    ```sh
+    python train.py
+    ```
+3.  Launch the real-time application:
+    ```sh
+    python app.py
+    ```
 
+---
 
+## 🔮 Future Work
 
+We have identified several directions for enhancing this project:
+* [cite_start]**Incorporate more modalities** like text sentiment and physiological signals[cite: 218, 715].
+* [cite_start]**Develop longitudinal tracking** to monitor emotional trends over time for early detection of chronic conditions like depression or ADHD[cite: 719].
+* [cite_start]**Design user-centric XAI interfaces** to make the insights more accessible to non-technical users[cite: 221, 721].
+* [cite_start]**Deploy as a mobile or web application** with a focus on privacy and on-device processing[cite: 222, 723].
 
-SHAP & LIME: Quantify the contribution of different audio features to a voice emotion prediction, providing clear, numerical justifications.
+---
 
+## 👥 Authors & Acknowledgments
 
+This project was created by:
+* [cite_start]**Shashank Kumar** (2021UCS1710) [cite: 5]
+* [cite_start]**Saksham Raj** (2021UCS1713) [cite: 5]
 
-High Performance: The combined multimodal framework demonstrates robust performance with an overall classification accuracy of 91.42%.
+We extend our sincere gratitude to our supervisor, **Dr. [cite_start]Anand Gupta**, for his invaluable guidance and support throughout this project[cite: 6, 273].
 
+---
 
-Real-Time Processing: The architecture is designed for real-time analysis, making it suitable for interactive applications.
+## 📄 License
 
-
-🔧 Tech Stack & Methodology
-Frameworks & Libraries: Python, TensorFlow, Keras, OpenCV, Librosa, Scikit-learn.
-
-Models:
-
-FER: VGGNet-based CNN 
-
-VER: CNN + LSTM Hybrid 
-
-
-XAI Techniques: SHAP, LIME, Grad-CAM 
-
-Datasets:
-
-FER: FER2013, CK+ 
-
-
-VER: RAVDESS 
-
-
-Preprocessing:
-
-
-Images: Face detection, resizing to 48
-times48, normalization, and data augmentation (flipping, rotation).
-
-
-
-Audio: Noise reduction and extraction of Mel-Frequency Cepstral Coefficients (MFCCs).
-
-⚙️ System Pipeline
-The system operates through two parallel branches that are fused for a final, unified prediction:
-
-Facial Branch (VGGNet):
-
-Input video is processed frame-by-frame.
-
-A face is detected and extracted.
-
-The facial image is fed into the VGGNet model to predict a facial emotion.
-
-Grad-CAM provides a heatmap visualizing the decision.
-
-Vocal Branch (CNN-LSTM):
-
-Input audio is captured and preprocessed to extract MFCCs.
-
-The MFCC spectrogram is fed into the CNN-LSTM model to predict a vocal emotion.
-
-SHAP explains which audio features were most influential.
-
-Multimodal Fusion:
-
-The feature vectors from both branches are concatenated and passed through a final dense network to yield a single, robust emotion classification.
-
-📊 Results
-The models demonstrated strong performance, with the ability to accurately distinguish between nuanced emotions.
-
-Metric (Combined Inference)	Score
-Accuracy		
-91.42% 
-
-Precision (Happy)	
-0.92 
-
-Recall (Happy)	
-0.90 
-
-F1-Score (Happy)	
-0.91 
-
-Precision (Sad)	
-0.89 
-
-Recall (Sad)	
-0.88 
-
-F1-Score (Sad)	
-0.885 
-
-
-Export to Sheets
-XAI-Generated Heatmap (Grad-CAM):
-
-
-This image shows how the model focuses on key areas like the mouth for "Happy" and "Surprise," and eyebrows for "Angry".
-
-
-
-🚀 Future Scope
-
-Incorporate More Modalities: Extend the system to include text sentiment analysis and physiological signals (e.g., heart rate) for an even more comprehensive assessment.
-
-
-Longitudinal Monitoring: Develop temporal models to track emotional trends over time, helping to detect early signs of chronic conditions like depression or anxiety.
-
-
-User-Centric XAI Interfaces: Design intuitive dashboards to translate XAI outputs into actionable feedback for users.
-
-
-Deployment: Optimize and deploy the model in mobile and web applications, ensuring privacy and compliance with standards like GDPR and HIPAA.
-
-
-👥 Authors
-Shashank Kumar ([Your LinkedIn/GitHub Profile Link])
-
-Saksham Raj ([Your LinkedIn/GitHub Profile Link])
-
-Under the supervision of Dr. Anand Gupta, Department of Computer Science & Engineering, NSUT.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
