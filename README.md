@@ -4,28 +4,28 @@
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-brightgreen.svg)
 ![Frameworks](https://img.shields.io/badge/frameworks-TensorFlow%20%7C%20Keras-orange.svg)
 
-[cite_start]A multimodal deep learning framework for real-time mental health assessment by analyzing facial expressions and vocal tones, with a core focus on transparency through Explainable AI (XAI)[cite: 228, 288]. [cite_start]This project was developed as a B.Tech. final year project at Netaji Subhas University of Technology (NSUT), New Delhi[cite: 241, 248].
+A multimodal deep learning framework for real-time mental health assessment by analyzing facial expressions and vocal tones, with a core focus on transparency through Explainable AI (XAI)[cite: 228, 288]. This project was developed as a B.Tech. final year project at Netaji Subhas University of Technology (NSUT), New Delhi[cite: 241, 248].
 
 ---
 
 ## 🚀 The Problem
 
-[cite_start]Traditional mental health assessments often rely on subjective self-reports, which can be inconsistent, biased, and inaccessible due to stigma or cost[cite: 22, 284]. [cite_start]Furthermore, most AI-driven solutions act as "black boxes," providing predictions without transparent reasoning, which limits their trustworthiness in sensitive healthcare applications[cite: 24, 311].
+Traditional mental health assessments often rely on subjective self-reports, which can be inconsistent, biased, and inaccessible due to stigma or cost[cite: 22, 284]. Furthermore, most AI-driven solutions act as "black boxes," providing predictions without transparent reasoning, which limits their trustworthiness in sensitive healthcare applications[cite: 24, 311].
 
 ---
 
 ## 💡 Our Solution
 
-This project introduces a proactive and transparent approach to mental health monitoring. [cite_start]By fusing insights from multiple emotional channels and making the AI's logic interpretable, we aim to create a reliable tool for early emotional distress detection[cite: 17, 19].
+This project introduces a proactive and transparent approach to mental health monitoring. By fusing insights from multiple emotional channels and making the AI's logic interpretable, we aim to create a reliable tool for early emotional distress detection[cite: 17, 19].
 
 ### Key Features
 * **🧠 Multimodal Emotion Recognition**: The system integrates two parallel deep learning models for a holistic emotional analysis:
-    * [cite_start]**Facial Emotion Recognition (FER)**: A VGGNet-based CNN classifies emotions from real-time facial expressions[cite: 36, 287].
-    * [cite_start]**Voice Emotion Recognition (VER)**: A hybrid CNN-LSTM architecture analyzes vocal features like tone and pitch to detect emotion in speech[cite: 80, 287].
-* [cite_start]**🔍 Explainable AI (XAI) for Transparency**: To build trust and enable validation, the model's decisions are made transparent[cite: 288].
-    * [cite_start]**Grad-CAM** generates visual heatmaps on faces, highlighting the key regions (e.g., eyes, mouth) that influence a prediction[cite: 205, 516].
-    * [cite_start]**SHAP and LIME** assign importance scores to vocal features, explaining *why* a certain emotion was detected from audio[cite: 205, 414].
-* [cite_start]**🏆 High Performance**: The integrated multimodal system achieves a robust overall accuracy of **91.42%** on test datasets[cite: 698].
+    * **Facial Emotion Recognition (FER)**: A VGGNet-based CNN classifies emotions from real-time facial expressions[cite: 36, 287].
+    * **Voice Emotion Recognition (VER)**: A hybrid CNN-LSTM architecture analyzes vocal features like tone and pitch to detect emotion in speech[cite: 80, 287].
+* **🔍 Explainable AI (XAI) for Transparency**: To build trust and enable validation, the model's decisions are made transparent[cite: 288].
+    * **Grad-CAM** generates visual heatmaps on faces, highlighting the key regions (e.g., eyes, mouth) that influence a prediction[cite: 205, 516].
+    * **SHAP and LIME** assign importance scores to vocal features, explaining *why* a certain emotion was detected from audio[cite: 205, 414].
+* **🏆 High Performance**: The integrated multimodal system achieves a robust overall accuracy of **91.42%** on test datasets[cite: 698].
 
 ---
 
@@ -33,9 +33,9 @@ This project introduces a proactive and transparent approach to mental health mo
 
 The system processes video and audio inputs through two distinct branches before fusing the results for a final classification.
 
-1.  [cite_start]**Facial Branch** → A face is detected from a video frame, preprocessed, and fed into the **VGGNet model**[cite: 34, 454].
-2.  [cite_start]**Vocal Branch** → Audio is preprocessed to extract **MFCCs**, which are then fed into the **CNN-LSTM model**[cite: 78, 464].
-3.  [cite_start]**Fusion** → Feature vectors from both branches are concatenated and passed to a final decision network for a unified and robust emotion prediction[cite: 493].
+1.  **Facial Branch** → A face is detected from a video frame, preprocessed, and fed into the **VGGNet model**[cite: 34, 454].
+2.  **Vocal Branch** → Audio is preprocessed to extract **MFCCs**, which are then fed into the **CNN-LSTM model**[cite: 78, 464].
+3.  **Fusion** → Feature vectors from both branches are concatenated and passed to a final decision network for a unified and robust emotion prediction[cite: 493].
 
 ---
 
@@ -46,14 +46,14 @@ The system processes video and audio inputs through two distinct branches before
 * **AI Models**: VGGNet, CNN-LSTM
 * **XAI Libraries**: SHAP, LIME, Grad-CAM
 * **Datasets Used**:
-    * [cite_start]FER2013 & CK+ (for facial expressions) [cite: 36, 438]
-    * [cite_start]RAVDESS (for voice emotions) [cite: 82, 439]
+    *FER2013 & CK+ (for facial expressions) [cite: 36, 438]
+    * RAVDESS (for voice emotions) [cite: 82, 439]
 
 ---
 
 ## 📊 Results & Explainability
 
-The model effectively distinguishes between seven core emotions. [cite_start]The confusion matrix below shows high per-class accuracy, such as 98.61% for 'Angry' and 97.51% for 'Happy'[cite: 42].
+The model effectively distinguishes between seven core emotions. The confusion matrix below shows high per-class accuracy, such as 98.61% for 'Angry' and 97.51% for 'Happy'[cite: 42].
 
 #### Grad-CAM Visualization
 The following image demonstrates the XAI in action. [cite_start]The heatmaps show the exact facial regions the model focused on to make its prediction, making the decision process transparent[cite: 205].
@@ -99,20 +99,20 @@ To get a local copy up and running, follow these simple steps.
 ## 🔮 Future Work
 
 We have identified several directions for enhancing this project:
-* [cite_start]**Incorporate more modalities** like text sentiment and physiological signals[cite: 218, 715].
-* [cite_start]**Develop longitudinal tracking** to monitor emotional trends over time for early detection of chronic conditions like depression or ADHD[cite: 719].
-* [cite_start]**Design user-centric XAI interfaces** to make the insights more accessible to non-technical users[cite: 221, 721].
-* [cite_start]**Deploy as a mobile or web application** with a focus on privacy and on-device processing[cite: 222, 723].
+* **Incorporate more modalities** like text sentiment and physiological signals[cite: 218, 715].
+* **Develop longitudinal tracking** to monitor emotional trends over time for early detection of chronic conditions like depression or ADHD[cite: 719].
+* **Design user-centric XAI interfaces** to make the insights more accessible to non-technical users[cite: 221, 721].
+* **Deploy as a mobile or web application** with a focus on privacy and on-device processing[cite: 222, 723].
 
 ---
 
 ## 👥 Authors & Acknowledgments
 
 This project was created by:
-* [cite_start]**Shashank Kumar** (2021UCS1710) [cite: 5]
-* [cite_start]**Saksham Raj** (2021UCS1713) [cite: 5]
+* **Shashank Kumar** (2021UCS1710) 
+* **Saksham Raj** (2021UCS1713) 
 
-We extend our sincere gratitude to our supervisor, **Dr. [cite_start]Anand Gupta**, for his invaluable guidance and support throughout this project[cite: 6, 273].
+We extend our sincere gratitude to our supervisor, **Dr. Anand Gupta**, for his invaluable guidance and support throughout this project[cite: 6, 273].
 
 ---
 
