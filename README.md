@@ -58,7 +58,7 @@ The model effectively distinguishes between seven core emotions. The confusion m
 #### Grad-CAM Visualization
 The following image demonstrates the XAI in action. [cite_start]The heatmaps show the exact facial regions the model focused on to make its prediction, making the decision process transparent[cite: 205].
 
-![Grad-CAM Heatmaps](https://i.imgur.com/nB4Xn8X.png)
+![Grad-CAM Heatmaps](src/xai heatmap.png)
 *Heatmaps for 'Disgust', 'Happy', 'Sad', 'Surprise', and 'Angry' emotions.*
 
 ---
